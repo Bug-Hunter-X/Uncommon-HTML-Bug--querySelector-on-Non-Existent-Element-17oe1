@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    const myDiv = document.getElementById("myDiv");
+    if (myDiv) {
+      const paragraph = myDiv.querySelector("p");
+      if (paragraph) {
+        paragraph.textContent = "Hello, world!";
+      } else {
+        // Handle the case where the <p> element doesn't exist.
+        const newParagraph = document.createElement("p");
+        newParagraph.textContent = "Paragraph element was missing, created one.";
+        myDiv.appendChild(newParagraph);
+      }
+    } else {
+       console.error("Element with id 'myDiv' not found");
+    }
+  </script>
+</body>
+</html>
