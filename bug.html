@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // This will throw an error if the element with id "myDiv" is not found
+    const myDiv = document.getElementById("myDiv").querySelector("p");
+    if (myDiv) {
+      myDiv.textContent = "Hello, world!";
+    } else {
+       console.error("Element not found");
+    }
+  </script>
+</body>
+</html>
